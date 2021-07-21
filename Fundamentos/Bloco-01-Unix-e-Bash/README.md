@@ -1,8 +1,8 @@
- # **Bloco 01**
+# **Bloco 01**
  
- ### Habilidades desenvolvidas nesse Bloco:
+### Habilidades desenvolvidas nesse Bloco:
  
-   * Utilizar o bash.
+* Utilizar o bash.
    
     
     
