@@ -1,0 +1,17 @@
+.container h1, 
+.container p {
+    text-align: center;
+}
+
+li:hover{
+    background-color: green;
+    font-size: 50px;
+}
+
+li:focus{
+    font-style: italic;
+}
+
+ul ,ol{
+    list-style: none;
+}
