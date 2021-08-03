@@ -81,36 +81,50 @@
 
 // 5- Crie uma função que receba um array de inteiros e retorne o inteiro que mais se repete. 
 
-let array = [2, 3, 2, 5, 8, 2, 3];
+// let array = [2, 3, 2, 5, 8, 2, 3];
 
-//pega cada elemento do array e compara com todo o resto
-// contabilizando cada repeticao e retorna o valor que mais se 
-//repetiu
-function maiorRepeticao(array){
+// //pega cada elemento do array e compara com todo o resto
+// // contabilizando cada repeticao e retorna o valor que mais se 
+// //repetiu
+// function maiorRepeticao(array){
   
-  let maiorRepetido = {
-        valor: null,
-        rep: 0
-      };
+//   let maiorRepetido = {
+//         valor: null,
+//         rep: 0
+//       };
 
-  for(let i = 0; i < array.length; i++){
-    let cont = 0;
+//   for(let i = 0; i < array.length; i++){
+//     let cont = 0;
 
-    for(let j = 1; j < array.length; j++){
-      if(array[i] === array[j]){
-        cont++;
+//     for(let j = 1; j < array.length; j++){
+//       if(array[i] === array[j]){
+//         cont++;
         
-      }
+//       }
       
-    }
+//     }
 
-    if(cont > maiorRepetido.rep){
-      maiorRepetido.valor = array[i];
-      maiorRepetido.rep = cont;
-    }
+//     if(cont > maiorRepetido.rep){
+//       maiorRepetido.valor = array[i];
+//       maiorRepetido.rep = cont;
+//     }
     
-  }
-  return maiorRepetido.valor;
-}
+//   }
+//   return maiorRepetido.valor;
+// }
 
-console.log(maiorRepeticao(array));
+// console.log(maiorRepeticao(array));
+
+// 6 - Crie uma função que receba um número inteiro N e retorne o somatório de todos os números de 1 até N
+
+// function somatorio(value){
+//   let sum = 0;
+//   for(let i=1; i<= value;i++){
+//     sum += i;
+//   }
+//   return sum;
+// }
+// console.log(somatorio(5));
+
+// 7 - Crie uma função que receba uma string word e outra string ending . Verifique se a string ending é o final da string word . Considere que a string ending sempre será menor que a string word .
+
