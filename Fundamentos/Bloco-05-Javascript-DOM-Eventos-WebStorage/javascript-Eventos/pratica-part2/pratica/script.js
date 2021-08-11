@@ -14,3 +14,4 @@ function createDaysOfTheWeek() {
 createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
+
