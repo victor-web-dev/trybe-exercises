@@ -1,8 +1,23 @@
+.container {
+  width: 410px;
+  position: relative;
+  left: 20%;
+  padding: 20px;
+  text-align: left;
+}
+.container div {
+  width: 100%;
+  text-align: center;
+}
+
 label input[type="text"],
 select {
   display: block;
   margin-bottom: 10px;
+  width: 95%;
+  padding: 5px;
 }
+
 
  label input[type="radio"] {
   display: inline;
@@ -10,9 +25,15 @@ select {
 
 fieldset {
   margin-bottom: 20px;
+  padding: 20px;
 }
 
 textarea {
   display: block;
   margin-bottom: 20px;
+  width: 100%;
+  resize: none;
 }
+
+
+
