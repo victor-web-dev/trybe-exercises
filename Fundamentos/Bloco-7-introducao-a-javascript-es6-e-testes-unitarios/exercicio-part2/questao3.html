@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questao 3</title>
+  <style>
+    body {
+      overflow: hidden;
+    }
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+    #div {
+      font-size: 150px;
+      font-family: sans-serif;
+    }
+    #btn {
+      padding: 50px 100px;
+      font-size: 50px;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <div id='div'></div>
+    <button id="btn">Contador</button>
+  </div>
+
+  <Script>
+    const btn = document.getElementById('btn');
+    const div = document.getElementById('div');
+    let count = 0;
+    div.innerText = count;
+    btn.addEventListener('click', () => {
+      count++;
+      div.innerText = count;
+    });
+  </Script>
+</body>
+</html>
