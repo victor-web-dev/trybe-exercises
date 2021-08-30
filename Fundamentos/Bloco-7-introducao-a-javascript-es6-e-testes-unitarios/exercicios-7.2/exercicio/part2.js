@@ -55,3 +55,22 @@ const verifyPair = (obj, key, value) => {
   return false;
 };
 
+//Bonus
+
+const teacherReport = (obj, teacherName) => {
+  const keys = Object.keys(obj);
+  const report = {
+    professor: teacherName,
+    aulas: [],
+    estudantes: 0,
+  }
+  for (const value of keys) {
+    if (obj[value].professor === teacherName) {
+      report.aulas.push(obj[value].materia);
+      report.estudantes += obj[value].numeroEstudantes;
+    }
+  }
+  return report;
+}
+
+console.log(teacherReport(allLessons, 'Carlos'));
