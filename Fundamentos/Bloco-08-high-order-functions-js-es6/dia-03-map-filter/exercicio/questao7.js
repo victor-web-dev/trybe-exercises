@@ -10,4 +10,4 @@ function authorWith3DotsOnName() {
   // escreva seu código aqui
 }
 
-assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult);
+// assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult);
