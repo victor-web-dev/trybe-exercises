@@ -3,3 +3,15 @@
 */
 
 
+const sorteio = (numeroApostado, callback) => {
+  const numSorteado = Math.floor( (Math.random() * 5) + 1);
+   const foiSorteado = callback(numSorteado, numeroApostado);
+   if (foiSorteado) {
+    return console.log("Parabéns você ganhou");
+   }
+   return console.log("Tente novamente");
+};
+
+const isTrue = (a,b) => a === b;
+
+sorteio(2, isTrue);
