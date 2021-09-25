@@ -18,6 +18,7 @@ const findAnimalsByType = (type) => (
   })
 );
 
+// uso do teste com o then/catch
 describe('Quando o tipo do animal existe', () => {
   test('Retorne a lista de animais', () => (
     findAnimalsByType('Dog').then((listDogs) => {
@@ -33,4 +34,25 @@ describe('Quando o tipo do animal, não existe', () => {
       expect(error.message).toMatch('Não possui esse tipo de animal.')
     ))
   ));
+});
+
+// uso do teste com matchers resolves/rejects
+
+describe('Testando promise - findAnimalsByType', () => {
+  describe('Quando o tipo do animal existe', () => {
+    test('Retorne a lista de animais', () => {
+      const listDogs = [
+        { name: 'Dorminhoco', age: 1, type: 'Dog' },
+        { name: 'Soneca', age: 2, type: 'Dog' },
+      ];
+      return expect(findAnimalsByType('Dog')).resolves.toEqual(listDogs);
+    });
+  });
+
+  describe('Quando o tipo de animal não existe', () => {
+    test('Retorna um erro', () => (
+      expect(findAnimalsByType('Lion'))
+        .rejects.toEqual(new Error('Não possui esse tipo de animal.'))
+    ));
+  });
 });
