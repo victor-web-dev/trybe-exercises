@@ -1,0 +1,80 @@
+Uso do Redux no react
+primeiro se cria o projeto react.
+    npx create-react-app my-app
+Depois as dependencias do redux para react
+    npm install redux react-redux
+
+Redux Dev Tools - 
+eh recomendado ter instalado no navegador
+Para poder utilizar eh preciso colocar o seguinte comando 
+no codigo na configuracao da store.
+    const store = createStore(rootReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    );
+
+No react o store recebe o retorno da funcao combineReducers()
+visto que varios reducers podem ser utilizados no desenvolvimento
+e mesmo que somente 1 seja usado a primeiro momento, eh melhor manter a logica
+para caso seja necessario expandir.
+
+Ordem de criacao do store no react:
+1 - reducer - 2 parametros - estado inicial e action.
+2 - configuracao do reducer com o switch pegando o type da action.
+3 - os types podem ser definidos em constantes para serem usados
+nas actions e na configuracao do reducer.
+4 - criacao da actions - retornando um objeto com o type.
+5 - combina os reducers na funcao combineReducers(),
+o retorno deve ser armazenado em uma constante.
+6 - cria a store e passa a constante do resultado da acao anterior.
+
+
+Organizacao - 
+As actions ficam em uma pasta /actions
+A store fica em uma pasta /store
+Os reducers ficam em uma pasta /reducers
+
+Pra o component App ter acesso ao Redux eh necessario colocar
+no arquivo index.js do projeto react o Provider
+
+importa o Provider do react-redux
+importa a store da /store e passa como prop do provider.
+ficando dessa forma: 
+    <Provider store={ store }>
+      <App />
+    </Provider>
+
+Depois disso eh necessario conectar um componente com o redux.
+
+Para acessar o estado como Props dentro do componente,
+eh necessario criar a funcao mapStateToProps();
+Essa funcao recebe um state como parametro e retorna um objeto,
+onde esse objeto tem uma chave com o nome da informacao que voce quer pegar do estado do redux,
+pra jogar a informacao dentro dessa chave, eh so usar o dot notation
+usando o state do parametro como inicio.
+    const mapStateToProps = (state) => {
+        return {
+            contador: state.counter.numCount
+        }
+    }
+o codigo acima eh so um exemplo.
+
+Para o componente ter acesso eh necessario usar a funcao connect()() no export.
+exemplos: 
+    export default connect(mapStateToProps, mapDispatchToProps)(Component)
+
+caso nao seja necessario dar um dispatch e o componente for somente pra leitura de informacao,
+basta colocar null onde fica o mapDispatchToProps.
+    connect(mapStateToProps, null)(Component)
+
+mapDispatchToProps()
+
+mapDispatchToProps = (dispatch) => {
+    return {
+        add: (value) => dispatch(action(value))
+    }
+}
+
+A chave add eh uma prop que vai ser usada no componente
+pra chamar a funcao dispatch passando uma acao que eh importada
+da pasta /actions, passando o valor que esta no estado local do componente.
+
