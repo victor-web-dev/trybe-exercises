@@ -1,0 +1,56 @@
+Redux
+
+Store
+Local onde os estados dos componentes serao salvos.
+
+Actions
+Objeto que contem a alteracao que vai ser feita no estado.
+
+Reducer
+Entidade que recebe os pedidos de atualizacao do estado.
+Envia o estado para o store.
+
+store.dispatch()
+funcao que vai enviar uma action para o reducer
+recebe como parametro o objeto(que eh a action)
+
+store.getState()
+funcao que recupera o estado da store.
+
+sequencia de interacao
+store.dispatch(action) >> reducer >> store >> recupera informacao com store.getState()
+---------------------------------------------------------------
+configuracao inicial
+
+A store so funciona se passar o reducer, que eh responsavel por alterar os dados da store.
+
+O reducer recebe um state como parametro, seu state ira substituir o da store.
+O reducer recebe como segundo parametro a ACTION.
+
+A action eh um objeto que precisa ter a propriedade type
+essa propriedade eh usada no reducer para decidir
+o que sera enviado para a store.
+Um switch eh usado no reducer usando o type como argumento.
+dentro do case eh retornado sempre da seguinte forma: 
+{
+    ...state,
+    (dados a serem enviados),
+}
+
+
+Subscribe()
+Adiciona um listener que vai executar uma callback toda vez
+que uma action for disparada.
+store.subscribe(() => {
+  console.log(store.getState());
+});
+
+combineReducers()
+Usado para combinar os reducers em um objeto para enviar para a store.
+A store so aceita 1 objeto, como podem existir varios reducers, eh necessario combinar eles.
+
+Cada reducer possui um estado diferente, ao enviar um objeto com os reducers combinados
+estaria enviando varios estados para o store.
+
+Eles sao acessados pela chave dentro do objeto enviado.
+
