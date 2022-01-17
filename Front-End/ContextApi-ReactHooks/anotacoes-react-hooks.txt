@@ -1,0 +1,34 @@
+Criação de componentes usando funções em vez de classes.
+
+Basta criar uma função com o nome do componente;
+
+As props são recebidas via parâmetro da função, 
+  podendo ser desestruturado para pegar somente
+  a prop especifica, em vez de ficar chamando o 
+  this.props;
+
+O render() não é mais utilizado, o return que faz esse trabalho.
+
+É preciso importar do react a função useState para ter acesso aos states;
+  O useState() retorna um array, onde o primeiro elemento é
+  o nome do state, o segundo, a função de set pra o estado 
+  criado.
+    ex: const [variavel, setVariavel] = useState('');
+  O valor colocado como paramentro da função useState é
+  o valor inicial do state criado.
+
+Para criar uma função de handle do componente, basta criar
+  uma função dentro, usando arrow function.
+
+-----------------------------------
+
+ACESSANDO OS DADOS DO CONTEXT 
+
+- useContext()
+  import React, { useContext } from 'react';
+  - É uma função que permite o uso do context dentro
+  do componente funcional.
+  - Leva como parametro o contexto de onde ele vai recuperar
+  o state. Sendo necessário importar o Context da pasta context
+  criada para configuração do React Context.
+ex: const { state } = useContext(MyContext); 

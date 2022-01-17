@@ -1,0 +1,76 @@
+O context api facilita na hora de passar props para componentes filhos.
+
+Diferença entre Context Api e Redux:
+ - Redux cria um state separado onde qualquer componente pode acessar,
+ desde que esteja conectado com o store.
+  É uma biblioteca externa e precisa ser instalada para ser utilizada.
+
+- Context Api não cria um state global mas facilita a transferencia 
+de informações entre componente pai e todos os componentes associados ao pai.
+
+Configuração inicial Context Api
+
+- cria um arquivo a ser exportado 'MyContext'
+- importa a função da biblioteca do react
+- atribui a função à uma variável
+- exporta para ser utilizado no componente futuro.
+
+import { createContext } from 'react';
+
+const MyContext = createContext();
+
+export default MyContext;
+
+Uso no componente:
+
+Existe 2 propriedades importantes dentro do context
+ - Provider
+ - Consumer
+
+O provider é colocado no componente pai.
+O consumer é colocado nos componentes filhos que vão consumir
+  as informações do componente pai.
+
+
+USANDO CONTEXT COM HOOKS
+
+- Cria uma pasta que contém a configuração do Context.
+  /context
+- Cria o context.js dentro da pasta
+  import { createContext } from 'react';
+  const MyContext = createContext();
+  export default MyContext;
+
+- Cria o provider.js dentro da pasta
+  - O provider é criado como componente funcional,
+    recebendo children como prop;
+  - Importando dentro dele o MyContext
+  - Dentro do provider vai ficar o state que será compartilhado,
+  junto com sua função de set.
+
+- Estrutura base do provider.
+  import React, { useState } from 'react';
+  import MyContext from '/context'
+
+  function Provider({ children }) {
+
+    const [state, setState] = useState(tipo de dado);
+
+    função de modificação do state
+    para enviar via provider.
+    modificaState()...
+
+    return (
+      <main>
+        <MyContext.Provider value={ {state, modificaState } }>
+          { children } * renderiza os elementos filhos do componente
+        </MyContext>
+      </main>
+    );
+  }
+  export default Provider;
+
+- USA O COMPONENTE PROVIDER DENTRO DO APP.js
+  ENGLOBANDO OS ELEMENTOS QUE VAO USAR O CONTEXT.
+
+
