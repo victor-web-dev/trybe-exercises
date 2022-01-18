@@ -1,10 +1,16 @@
 Imagens no Docker
 
 Comandos: 
- - docker images |-> lista todas as imagens baixadas.
- - docker rmi -f <IMAGE ID>
+ - docker pull <image>:<tag> |-> baixa uma imagem espeficicando
+  sua versão.
+   - docker pull <image> |-> baixa uma imagem sem especificar
+    a versão, baixa automaticamente a ultima versão.
+
+- docker images |-> lista todas as imagens baixadas.
+
+- docker rmi -f <IMAGE ID>
     apaga a imagem especificada pelo IMAGE ID
-    flag: -f {força a remoção da imagem}
+    flags: -f {força a remoção da imagem}
 
 Entendimentos:
 - As imagens no docker servem como arquivos de orien-

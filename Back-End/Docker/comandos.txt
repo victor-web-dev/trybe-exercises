@@ -41,13 +41,28 @@ COMANDOS GERAIS:
     -a || --all : lista containers ativos e inativos.
     }
 
-- docker pull <imagem>:<tag> |-> Baixa somente a imagem
-  a partir do site oficial do docker.
-
 - docker start <nome ou ID do container>
   docker start -ai <nome ou ID do container>
   Inicia o container
   flags: {
     -a : acoplar container ao terminal
     -i : Modo interativo
+  }
+
+- docker stop <nome ou ID do container>
+  Parar o container
+
+  ABRIR O TERMINAL BASH NO CONTAINER QUE ESTA RODANDO
+  - docker exec -it <nome ou ID do container> bash
+
+COMANDO PARA MAPEAMENTO DE PORTAS DE REDE
+
+- docker run -d -P --name <nome do container> nginx:<versão>
+  docker run -d -p 3000:80 nginx
+  docker run -d --name teste_nginx -p 3000:80 nginx
+
+  flags: {
+    -P : O docker mapeia de forma automatica a porta de acesso
+    -p <HOST>:<CONTAINER> : Você mesmo define qual porta usar.
+    -d : Inicia o container desacoplado
   }
