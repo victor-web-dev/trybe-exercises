@@ -5,7 +5,7 @@ no site oficial https://hub.docker.com/
 <tag> -> se refere a escolha da versão nos comandos.
 
 COMANDOS DE IMAGEM:
-- docker pull <image>:<tag> |-> baixa uma imagem espeficicando
+- docker pull <image>:<tag> |-> baixa uma imagem especificando
   sua versão.
    - docker pull <image> |-> baixa uma imagem sem especificar
     a versão, baixa automaticamente a ultima versão.
@@ -17,6 +17,11 @@ COMANDOS DE IMAGEM:
     flags: -f {força a remoção da imagem}
 
 COMANDOS DE CONTAINER:
+
+- docker container create -it --name <nome do container> <imagem>:<versao>
+  Cria um container sem inicia-lo com as flags -it pra ser um container
+  interativo.
+
 - docker container rm -f <CONTAINER ID>
   apaga o container especificado pelo CONTAINER ID
     flags: -f {força a remoção}
