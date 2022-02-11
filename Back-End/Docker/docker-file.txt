@@ -1,0 +1,45 @@
+DOCKERFILE
+
+docs - https://docs.docker.com/engine/reference/builder
+
+- É um arquivo de configuração usado pelo Docker para criar
+imagens de forma automática.
+
+- Todo dockerfile começa com o comando FROM
+e a partir dele os outros comandos podem ser colocados 
+em qualquer ordem. Porém, a ordem deve ser alterada dependendo
+da aplicação para otimizar a build da imagem.
+
+- Recomenda-se utilizar sempre as versões minimas dos Sistemas
+operacionais. Tipo o alpine, por exemplo.
+Outra recomendação é usar versões especificas do SO 
+por exemplo: Ubuntu:18
+
+Comandos:
+
+FROM - toda imagem deve se basear em outra e é esse comando
+que define o tipo de SO e versão.
+
+WORKDIR - Define diretório de trabalho
+
+COPY - copia diretorios e arquivos para dentro da imagem
+2 formas de escrita:
+COPY ["<src>",... "<dest>"] || 
+COPY <src>... <dest>
+
+RUN - executa os comandos definidos durante a criação da imagem
+
+RUN <command> || 
+RUN ["executable", "param1", "param2"]
+
+EXPOSE - disponibiliza uma porta de rede de sua escolha.
+
+CMD - executa comandos dentro do container
+
+ENTRYPOINT - executa comandos dentro do container
+
+LABEL - 
+
+ENV - 
+
+USER - 

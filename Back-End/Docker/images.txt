@@ -1,0 +1,32 @@
+Imagens no Docker
+
+Comandos: 
+ - docker pull <image>:<tag> |-> baixa uma imagem espeficicando
+  sua versão.
+   - docker pull <image> |-> baixa uma imagem sem especificar
+    a versão, baixa automaticamente a ultima versão.
+
+- docker images |-> lista todas as imagens baixadas.
+
+- docker rmi -f <IMAGE ID>
+    apaga a imagem especificada pelo IMAGE ID
+    flags: -f {força a remoção da imagem}
+
+Entendimentos:
+- As imagens no docker servem como arquivos de orien-
+tação para criar containers a partir delas.
+
+- Uma imagem pode ser usada para criar varios containers
+diferentes. Cada container gerado a partir da mesma
+imagem não é igual ao anterior.
+
+- Cada imagem e container possui sua ID unica que poderá
+ser usada para identifica-los em comandos especificos.
+
+- O docker separa suas imagens por camadas;
+  Onde cada camada é uma parte necessária 
+  para gerar o container. 
+  O docker reaproveita os dados existentes no computador
+  pra poder gerar a imagem sem ter que duplicar arquivos,
+  ou seja, ele não baixa novamente algo que já existe.
+  

@@ -1,0 +1,73 @@
+Comandos Docker:
+- As imagens oficiais para o docker são disponibilizados
+no site oficial https://hub.docker.com/
+
+<tag> -> se refere a escolha da versão nos comandos.
+
+COMANDOS DE IMAGEM:
+- docker pull <image>:<tag> |-> baixa uma imagem especificando
+  sua versão.
+   - docker pull <image> |-> baixa uma imagem sem especificar
+    a versão, baixa automaticamente a ultima versão.
+
+- docker images |-> lista todas as imagens baixadas.
+
+- docker rmi -f <IMAGE ID>
+    apaga a imagem especificada pelo IMAGE ID
+    flags: -f {força a remoção da imagem}
+
+COMANDOS DE CONTAINER:
+
+- docker container create -it --name <nome do container> <imagem>:<versao>
+  Cria um container sem inicia-lo com as flags -it pra ser um container
+  interativo.
+
+- docker container rm -f <CONTAINER ID>
+  apaga o container especificado pelo CONTAINER ID
+    flags: -f {força a remoção}
+
+- docker container run <nome-da-imagem>:<tag>
+  docker container run ubuntu
+  docker container run -it ubuntu
+    Procura uma imagem localmente para criar um container;
+    Caso nao exista, ele faz um pull da imagem a partir
+      do site oficial do docker;
+    Cria o container a partir da imagem, caso a versão não
+      seja especificada, pega a versão mais atual;
+  flags: {
+    -i : interface interativa do terminal
+    -t : requisita um terminal
+    --name : --name <nome do container>
+  }
+
+COMANDOS GERAIS:
+- docker ps |-> lista containers ativos
+  flags: {
+    -a || --all : lista containers ativos e inativos.
+    }
+
+- docker start <nome ou ID do container>
+  docker start -ai <nome ou ID do container>
+  Inicia o container
+  flags: {
+    -a : acoplar container ao terminal
+    -i : Modo interativo
+  }
+
+- docker stop <nome ou ID do container>
+  Parar o container
+
+  ABRIR O TERMINAL BASH NO CONTAINER QUE ESTA RODANDO
+  - docker exec -it <nome ou ID do container> bash
+
+COMANDO PARA MAPEAMENTO DE PORTAS DE REDE
+
+- docker run -d -P --name <nome do container> nginx:<versão>
+  docker run -d -p 3000:80 nginx
+  docker run -d --name teste_nginx -p 3000:80 nginx
+
+  flags: {
+    -P : O docker mapeia de forma automatica a porta de acesso
+    -p <HOST>:<CONTAINER> : Você mesmo define qual porta usar.
+    -d : Inicia o container desacoplado
+  }
