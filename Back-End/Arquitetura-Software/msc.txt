@@ -1,0 +1,9 @@
+Organização e divisão de responsabilidades é uma forma de definir a arquitetura de software.
+
+'Existem padrões de arquitetura específicos para problemas específicos'
+
+Padrão MSC:
+ M - Model
+ S - Service
+ C - Controller
+
