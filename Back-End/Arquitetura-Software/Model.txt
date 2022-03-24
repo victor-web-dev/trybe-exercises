@@ -1,0 +1,5 @@
+O model é onde se define a estrutura dos dados e acesso à banco de dados.
+
+Aqui é onde todos os detalhes de armazenamento e acesso são abstraidos. 
+Sendo totalmente desacoplado das demais camadas, podendo ser re-utilizado sem influenciar em algum outro serviço.
+É no model que há verificações de regras de negócios.
