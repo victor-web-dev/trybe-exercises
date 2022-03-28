@@ -30,3 +30,5 @@ Camada de Service:
   - Abstrai a lógica de negócio.
   - Não deve ter acesso a informações da camada de dados.
   - Não recebe nada relacionado ao HTTP. 
+
+  

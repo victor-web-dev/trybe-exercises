@@ -1,0 +1,16 @@
+Variáveis de Ambiente:
+
+Melhor forma de informar os dados necessários para conexão com banco de dados
+ou informações sensiveis que não podem ser compartilhadas.
+
+>>>npm install dotenv
+  - biblioteca que facilita o uso do process.env
+
+Cria-se um arquivo .env
+  Seguindo o padrão do exemplo: 
+    # .env
+    PORT=3000
+    MYSQL_HOST=localhost
+    MYSQL_DB_NAME=model_example
+
+O .env precisa estar dentro do .gitignore
