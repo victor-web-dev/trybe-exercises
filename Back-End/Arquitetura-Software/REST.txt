@@ -1,0 +1,43 @@
+Padrão REST:
+  Reprensentational State Transfer (REST); 
+  Vai delimitar o comportamento da API;
+  Considera a aplicação um conjunto de recursos.
+    E recursos são uma abstração de informações,
+    podendo ser qualquer coisa.
+
+Arquitetura REST define 6 restrições:
+
+  - 1 Uniform Interface - Interface uniforme
+      * Padrão de comunicação entre servidor e cliente deve ser seguido.
+      * Deve ser possível identificar o recurso pelo endpoint da requisição.
+      * Manter o padrão de retorno. 
+      * As ações a serem realizadas devem ser identificadas pelo verbo HTTP.
+      * Sempre dar respostas com boas práticas de Status Code. 
+        https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
+
+  - 2 Arquitetura Cliente-servidor
+      * API e Cliente Desacoplados.
+      * As respostas devem ser entregues independente de sistema.
+
+  - 3 Stateless - Sem estado
+      * A API não guarda informação
+      * O retorno das requisições não são mantidos em memória.
+
+  - 4 Cacheable
+      * O cache é um depósito de informações no lado do cliente,
+        onde armazena temporariamente os dados da requisição.
+      * Header do cache: Cache-Control: max-age=seconds
+      * Basicamente os dados devem ser cacheaveis para aprimorar a performance da API,
+        porém, os dados não devem ficar guardados por tempo demais.
+
+  - 5 Layered System - Sistema em camadas
+      * Abstração de como os dados foram buscados.
+      * O cliente so precisa receber a resposta, sem saber como ocorreu o processo.
+
+  - 6 Code on Demand - Código sob demanda
+      * Possibilidade do servidor enviar código ao cliente.
+      * Podendo customizar o comportamento enviando algum programa que será executado naquele momento.
+
+
+
+

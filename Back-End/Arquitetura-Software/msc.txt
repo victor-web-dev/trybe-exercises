@@ -1,0 +1,34 @@
+Organização e divisão de responsabilidades é uma forma de definir a arquitetura de software.
+
+'Existem padrões de arquitetura específicos para problemas específicos'
+
+Regras de negócios:
+ - Definem ou restringem algum aspecto do negócio.
+ - Define como o negócio deve se comportar
+ - Define tipos de informações que o sistema necessita.
+ - Em Sistemas de software, as regras de negócios são os códigos que controlam o comportamento das aplicações.
+
+Padrão MSC:
+ M - Model
+ S - Service
+ C - Controller
+
+Model - Onde será executada as operações de bancos de dados.
+Service - Onde será estruturada a regra de negócio, geralmente é onde se chamas os métodos definidos na Model
+Controllers - Processa e chama as funções da camada de service.
+
+Camada de Controllers:
+  - Primeira camada na API
+  - Onde fica os middlewares
+  - Aqui que os dados são recebidos e tratados para então passar para a próxima camada.
+  - Informa somente o necessário para o Service.
+
+Camada de Service:
+  - Segunda Camada, entre Controller e Model.
+  - Responsável pela lógica de negócio.
+  - Deve centralizar o acesso a dados e funções externas.
+  - Abstrai a lógica de negócio.
+  - Não deve ter acesso a informações da camada de dados.
+  - Não recebe nada relacionado ao HTTP. 
+
+  

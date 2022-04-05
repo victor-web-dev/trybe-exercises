@@ -1,0 +1,24 @@
+O model é onde se define a estrutura dos dados e acesso à banco de dados.
+
+Aqui é onde todos os detalhes de armazenamento e acesso são abstraidos. 
+Sendo totalmente desacoplado das demais camadas, podendo ser re-utilizado sem influenciar em algum outro serviço.
+É no model que há verificações de regras de negócios.
+
+O pacote node usado para acessar o MySQL até o momento é 'mysql2';
+ - Exemplo de conexão, no meu caso por usar o MySQL no docker preciso especificar a PORT
+
+  const mysql = require('mysql2/promise');
+
+  const connection = mysql.createPool({
+    host: 'localhost',
+    user:'root',
+    password: '',
+    database: 'model_example',
+    port: '3306'
+  });
+
+  module.exports = connection;
+
+O exemplo acima foi de uma conexão com o banco de dados. 
+Essa conexão será usada para criar funções dentro de arquivos js para cada tipo de acesso ao banco.
+Essas funções que serão exportadas para uso em outras camadas.
