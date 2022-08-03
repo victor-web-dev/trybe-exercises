@@ -235,7 +235,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 31: Projeto - App de Delivery
 
-- [x] 31-1: _[Projeto - App de Delivery]()_
+- [x] 31-1: _[Projeto - App de Delivery](https://github.com/victor-web-dev/Trybe-project-Delivery-App)_
 
 ##### Bloco 32: Masterclass - VPS, CI/CD
 
